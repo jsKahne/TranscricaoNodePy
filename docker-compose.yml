@@ -25,4 +25,4 @@ services:
 
 networks:
   transcription-network:
-    driver: bridge
+    driver: overlay
