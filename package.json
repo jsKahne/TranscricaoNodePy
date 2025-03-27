@@ -1,0 +1,27 @@
+{
+  "name": "video-transcription-api",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "API for video transcription using Whisper",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.7",
+    "better-queue": "^3.8.12",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.18.3",
+    "express-rate-limit": "^7.5.0",
+    "fluent-ffmpeg": "^2.1.3",
+    "googleapis": "^133.0.0",
+    "node-fetch": "^3.3.2",
+    "uuid": "^11.1.0",
+    "winston": "^3.12.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

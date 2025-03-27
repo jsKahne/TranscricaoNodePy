@@ -1,0 +1,34 @@
+# Dependências
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# Arquivos temporários
+temp/
+*.mp3
+*.mp4
+
+# Arquivos de configuração
+tokens.json
+credentials.json
+
+# Logs
+*.log
+npm-debug.log*
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# IDEs e editores
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Arquivos de build
+dist/
+build/
+*.egg-info/

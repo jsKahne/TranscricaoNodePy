@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  transcription-api:
+    build: .
+    container_name: transcription-api
+    restart: unless-stopped
+    ports:
+      - "9898:9898"
+    volumes:
+      - ./temp:/app/temp
+      - ./.env:/app/.env
+      - ./tokens.json:/app/tokens.json
+    environment:
+      - NODE_ENV=production
+      - PORT=9898
+      - TZ=America/Sao_Paulo
+    networks:
+      - transcription-network
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  transcription-network:
+    driver: bridge
