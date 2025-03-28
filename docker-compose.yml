@@ -22,6 +22,20 @@ services:
       options:
         max-size: "10m"
         max-file: "3"
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: any
+      placement:
+        constraints:
+          - node.role == manager
+      labels:
+        - "traefik.enable=true"
+        - "traefik.docker.network=transcription-network"
+        - "traefik.http.routers.transcription-api.rule=Host(`api-transcricao.mlgrupo.com.br`)"
+        - "traefik.http.routers.transcription-api.entrypoints=websecure"
+        - "traefik.http.routers.transcription-api.tls.certresolver=letsencryptresolver"
+        - "traefik.http.services.transcription-api.loadbalancer.server.port=9898"
 
 networks:
   transcription-network:
